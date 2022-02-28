@@ -1,6 +1,6 @@
 "use strict";
 let mysql = require('mysql2');
-let DBConfig = require("./lib/DBConfig.js")
+let DBConfig = require("./config/DBConfig.js")
 let con = mysql.createConnection(DBConfig.databaseOptions);
 const saltyBetsAPI = require("./lib/saltyBetsAPI.js");
 const saltyChat = require("./lib/saltyChat.js");
