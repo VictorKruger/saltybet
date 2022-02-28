@@ -54,7 +54,7 @@ async function Main()
 				
 				live.state = dat.type;
 
-				con.query(FighterInfo.select,[live.fighters.Red,live.fighters.Blue],function (err, result) {
+				con.query(FighterInfo.select,[dat.f1,dat.f2],function (err, result) {
 					if (err) throw err;
 					console.log(result);
 				});
