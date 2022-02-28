@@ -14,8 +14,8 @@ Main().catch(console.error);
 async function Main()
 {
 	////////////////////////////////////////////////////////////////
-	// Set up database and local status variables
-	//const db = new saltyBetsDB("./salty.db");
+	// Connect to established MySQL server and Print in console
+	//the last time the database was updated.
 
 	con.connect(function(err) {
 		if (err) throw err;
@@ -47,19 +47,20 @@ async function Main()
 	sc.listen((msg, dat) =>
 	{
 		console.log(dat || msg);
-		db.logMessage(msg);
-		switch (dat.type)
+		//db.logMessage(msg);
+		switch (dat?.type)
 		{
 			case "open":
 				
 				live.state = dat.type;
 
-				con.query(FighterInfo,[live.fighters.Red,live.fighters.Blue],function (err, result) {
+				con.query(FighterInfo.select,[live.fighters.Red,live.fighters.Blue],function (err, result) {
 					if (err) throw err;
 					console.log(result);
 				});
 
 				break;
+				
 		}
 	});
 	await sc.connect();
