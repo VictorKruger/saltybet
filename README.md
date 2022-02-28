@@ -1,1 +1,1 @@
-An experamental informatun scraper for Saltybet.com
+An experimental information scraper for Saltybet.com
